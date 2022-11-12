@@ -1,0 +1,174 @@
+/* .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 10px 20px;
+  gap: 312px;
+  position: absolute;
+  width: 100%;
+  height: 64px;
+  left: 0px;
+  top: 0px;
+  background: #111827;
+  color: white;
+} */
+nav {
+  background: #111827;
+  color: white;
+  flex-direction: row;
+}
+
+.headerInfo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.headerInput {
+  display: flex;
+  justify-content: center;
+}
+
+.headerRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  line-height: 2.2;
+}
+
+.header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header ul li {
+  margin-left: 20px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #111827;
+  color: white;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.copyRight {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.footer-icons {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-notes {
+  margin-right: 20px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  text-indent: 0.8em;
+}
+
+/* pages */
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.s-heading {
+  margin: 0 auto;
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+  margin: 0 0 5px 3px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 580px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    text-align: center;
+  }
+
+  .footer-icons {
+    /* margin-top: 20px;
+    margin-left: 20px; */
+    margin: auto;
+    padding: 10px;
+  }
+
+  .footer-notes {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+}

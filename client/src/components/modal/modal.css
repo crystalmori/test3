@@ -1,0 +1,9 @@
+.modal-link {
+  color: "blue";
+  text-decoration: "underline";
+}
+
+.modal-button {
+  display: flex;
+  justify-content: center;
+}
