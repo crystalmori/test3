@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import useStyles from "./styles";
 
 import { commerce } from "../../../lib/commerce";
@@ -27,11 +27,13 @@ const ProductDetails = ({ onAddToCart, cart }) => {
   const handleRemoveCart = () => onAddToCart(product.id, -1);
 
   useEffect(() => {
+    console.log("is triggle");
+    // console.log("this is id", window.location.pathname);
     const id = window.location.pathname.split("/");
     fetchProduct(id[1]);
   }, []);
 
-  console.log(product);
+  // console.log("this is product from app.js", product)
 
   return (
     <>
@@ -40,11 +42,15 @@ const ProductDetails = ({ onAddToCart, cart }) => {
         <Grid container justify="center" spacing={2} columns={16}>
           <>
             <Card>
-              <CardMedia
-                className={classes.media}
-                // image={product.image.url}
-                title={product.name}
-              />
+              {product.image === undefined ? (
+                <CardMedia
+                  className={classes.media}
+                  image={product.image.url}
+                  title={product.name}
+                />
+              ) : (
+                <CardMedia className={classes.media} title={product.name} />
+              )}
             </Card>
             <Card>
               <CardContent className={classes.right}>

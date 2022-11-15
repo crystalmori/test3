@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Cart from "./components/cart/Cart";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
+import ProductForm from "./components/products/product-form/productForm";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -16,28 +17,12 @@ function App() {
   const [cart, setCart] = useState({});
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Fetch all the products from commerce.js
-
-  // var test = null;
-  // const fetchProducts = async () => {
-  //   test = (await commerce.products.list()) || [];
-  //   setProducts(test);
-  // };
-
-  // useEffect(() => {
-  //   //Dismisses InfoWindow
-  //   setProducts(test);
-  //   console.log(test);
-  // }, [test]);
-
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
     setProducts(data);
+    // console.log("product" , products);
+    // console.log("product id from fetchProducts", product.id);
   };
-
-  // useEffect(() => {
-  //   setProducts(data);
-  // }, data)
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
@@ -60,12 +45,7 @@ function App() {
     fetchCart();
   }, []);
 
-  // useEffect(() => {
-  //   const id = window.location.pathname.split("/");
-  //   fetchProduct(id[1]);
-  // }, []);
-
-  // console.log(products);
+  console.log(products);
   // console.log(cart);
   // console.log(cart.total_items);
   // console.log(cart.line_items);
@@ -89,23 +69,29 @@ function App() {
             path="/"
             element={
               <Products
-                products={products}
-                onAddToCart={handleAddToCart}
-                cart={cart}
+              // getProductId={getProductId}
+              // products={products}
+              // onAddToCart={handleAddToCart}
+              // cart={cart}
               />
             }
           />
+
+          <Route exact path="/create" element={<ProductForm />} />
+
+          {/*
           <Route
-            exact
-            path="/:productId"
+            // exact
+            // path="/:productId""
             element={
               <ProductDetails
                 onAddToCart={handleAddToCart}
                 cart={cart}
-                product={product}
+                // product={product}
               />
             }
           />
+          */}
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
         </Routes>

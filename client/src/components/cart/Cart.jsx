@@ -31,8 +31,9 @@ const Cart = ({
           Cart
         </Typography>
 
-        {line_items?.map((item) => (
+        {line_items?.map((item, index) => (
           <CartItems
+            key={index}
             onAddToCart={onAddToCart}
             onDelFromCart={onDelFromCart}
             item={item}
